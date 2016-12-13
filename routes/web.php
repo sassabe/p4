@@ -16,18 +16,18 @@ Route::get('/', function(){
  });
 
 #5k plan
-Route::get('/5k/create', 'FiveKController@create')->name('5k.create');
+Route::get('/5k/create', 'FiveKController@create')->name('5k.create')-> middleware('auth');
 Route::post('/5k/store', 'FiveKController@store')->name('5k.store');
 
 #10k plan
-Route::get('/10k/create', 'TenKController@create')->name('10k.create');
+Route::get('/10k/create', 'TenKController@create')->name('10k.create')-> middleware('auth');
 Route::post('/random-user/store', 'RandomUserController@store')->name('random-user.store');
 
 #Half Marathon plan
-Route::get('/half-marathon/create', 'HalfController@create')->name('half-marathon.create');
+Route::get('/half-marathon/create', 'HalfController@create')->name('half-marathon.create')->middleware('auth');
 
 #Marathon plan
-Route::get('/marathon/create', 'MarathonController@create')->name('marathon.create');
+Route::get('/marathon/create', 'MarathonController@create')->name('marathon.create')->middleware('auth');
 
 ##code to make sure DB connection is working, test it at localhost/debug
 Route::get('/debug', function() {
@@ -64,3 +64,8 @@ Route::get('/debug', function() {
     echo '</pre>';
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+Route::get('/logout','Auth\LoginController@logout')->name('logout');

@@ -29,7 +29,6 @@ nav ul a {
 	line-height:2em;
 	padding:0 15px;
 }
-
 /* end menu section */
 
 h1 {
@@ -61,6 +60,7 @@ h4 .highlight {
 .links a:hover {
   background-color: #9BCC31;
 }
+
 a {
   text-decoration: none;
   font-size: 1.4em; font-weight: bold;
@@ -69,6 +69,7 @@ a {
 a:hover {
   color: #A65E0C;
 }
+
 img {
   border: 2px solid #fff;
   display: flex;
@@ -77,22 +78,24 @@ img {
   display: flex;
   justify-content: center;
 }
-/* lorem ipsum and random user page extra styling */
+
 form {
   text-align: center;
 }
 button {
   background-color: #C8E38D;
+  color: #A65E0C;
   border: 1px solid green;
   padding: 1.2%;
 	cursor: pointer;
+  font-size: 1.2em;
 
 }
 button:hover {
-	background-color: #7311BF;
-	color: #A65E0C;
+	background-color: #8DB03F;
 }
 
+/*
 ul .error {
   color: red;
   list-style: none;
@@ -113,7 +116,18 @@ ul .error {
 .more-text {
   text-align: center;
 }
+*/
 footer {
   text-align: center;
   margin-top: 5%;
+}
+/* login and register pages */
+.flash_message {
+    width:100%;
+    text-align:center;
+    padding:5px;
+    position:fixed;
+    top:9%;
+    left:0;
+    background-color:yellow;
 }

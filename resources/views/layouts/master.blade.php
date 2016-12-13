@@ -16,15 +16,31 @@
     <link rel="icon" type="image/jpeg" href="{{ asset('/images/favicon.jpg') }}" >
   </head>
   <body>
+    @if(Session::get('flash_message') != null)
+      <div class='flash_message'>{{ Session::get('flash_message') }}</div>
+    @endif
     <section class="menu">
         <nav>
           <ul>
             <li><a href="http://p1.sassabe.me">Sassabe's Portfolio |</a></li>
             <li><a href="http://p2.sassabe.me">P2 |</a></li>
             <li><a href="http://p3.sassabe.me">P3 |</a></li>
-            <li><a href="http://p4.sassabe.me">P4</a></li>
           </ul>
         </nav>
+        <nav>
+          <ul>
+              @if(Auth::check())
+                  <li><a href='/'>Home</a></li>
+                  <li><a href='/books/create'>Log a run</a></li>
+                  <li><a href='/logout'>Log out</a></li>
+              @else
+                  <li><a href='/'>Home</a></li>
+                  <li><a href='/login'>Log in</a></li>
+                  <li><a href='/register'>Register</a></li>
+              @endif
+          </ul>
+        </nav>
+
       @yield('navigation')
     </section>
     <section>
