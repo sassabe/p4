@@ -45,6 +45,9 @@ h4 {
   padding-bottom: 4%;
   font-size: 1.2em;
 }
+h4 .highlight {
+  background-color: yellow;
+}
 .links {
   display: flex;
   justify-content: space-around;
@@ -79,17 +82,15 @@ form {
   text-align: center;
 }
 button {
-	background-color: #A64CED;
-	font-size: 1.3em;
-	color: #fff;
-	margin: 3% 0%;
-	padding: .3em;
+  background-color: #C8E38D;
+  border: 1px solid green;
+  padding: 1.2%;
 	cursor: pointer;
-	font-family: 'Space Mono', monospace;
+
 }
 button:hover {
 	background-color: #7311BF;
-	color: #D2D4D6;
+	color: #A65E0C;
 }
 
 ul .error {

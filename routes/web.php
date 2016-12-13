@@ -16,12 +16,18 @@ Route::get('/', function(){
  });
 
 #5k plan
-Route::get('/5k/create', 'IpsumController@create')->name('lorem-ipsum.create');
-Route::post('/lorem-ipsum/store', 'IpsumController@store')->name('lorem-ipsum.store');
+Route::get('/5k/create', 'FiveKController@create')->name('5k.create');
+Route::post('/5k/store', 'FiveKController@store')->name('5k.store');
 
-#Random User Generator
-Route::get('/random-user/create', 'RandomUserController@create')->name('random-user.create');
+#10k plan
+Route::get('/10k/create', 'TenKController@create')->name('10k.create');
 Route::post('/random-user/store', 'RandomUserController@store')->name('random-user.store');
+
+#Half Marathon plan
+Route::get('/half-marathon/create', 'HalfController@create')->name('half-marathon.create');
+
+#Marathon plan
+Route::get('/marathon/create', 'MarathonController@create')->name('marathon.create');
 
 ##code to make sure DB connection is working, test it at localhost/debug
 Route::get('/debug', function() {
