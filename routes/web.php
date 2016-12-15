@@ -17,11 +17,9 @@ Route::get('/', function(){
 
 #5k plan
 Route::get('/5k/create', 'FiveKController@create')->name('5k.create')-> middleware('auth');
-Route::post('/5k/store', 'FiveKController@store')->name('5k.store');
 
 #10k plan
 Route::get('/10k/create', 'TenKController@create')->name('10k.create')-> middleware('auth');
-Route::post('/random-user/store', 'RandomUserController@store')->name('random-user.store');
 
 #Half Marathon plan
 Route::get('/half-marathon/create', 'HalfController@create')->name('half-marathon.create')->middleware('auth');
@@ -29,6 +27,16 @@ Route::get('/half-marathon/create', 'HalfController@create')->name('half-maratho
 #Marathon plan
 Route::get('/marathon/create', 'MarathonController@create')->name('marathon.create')->middleware('auth');
 
+##Runs
+
+Route::get('/runs/create', 'RunController@create')->name ('runs.create')->middleware('auth');
+Route::post('/runs', 'RunController@store')->name('runs.store');
+Route::get('/runs/{title}', 'RunController@show')->name('runs.show');
+Route::get('/runs/{id}/edit', 'RunController@edit')->name('runs.edit');
+Route::put('/runs/{id}', 'RunController@update')->name('runs.update');
+Route::get('/runs/{id}/delete', 'RunController@delete')->name('runs.destroy');
+Route::delete('/runs/{id}', 'RunController@destroy')->name('runs.destroy');
+Route::get('/runs', 'RunController@index')->name ('runs.index')->middleware('auth');
 ##code to make sure DB connection is working, test it at localhost/debug
 Route::get('/debug', function() {
 

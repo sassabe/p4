@@ -31,7 +31,8 @@
           <ul>
               @if(Auth::check())
                   <li><a href='/'>Home</a></li>
-                  <li><a href='/books/create'>Log a run</a></li>
+                  <li><a href='/runs/index'>My runs</a></li>
+                  <li><a href='/runs/create'>Log a run</a></li>
                   <li><a href='/logout'>Log out</a></li>
               @else
                   <li><a href='/'>Home</a></li>

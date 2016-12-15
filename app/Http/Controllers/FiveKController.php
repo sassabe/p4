@@ -33,14 +33,42 @@ class FiveKController extends Controller
 */
 public function store(Request $request)
 {
-   #validate
+/*   #validate
    $this->validate($request, [
-     'uAmount'=>'required|numeric|min:1|max:99',
+     'pace'=>'required|numeric|min:4|max:30',
    ]);
    #put title submitted via form into variable "title"
-   $uAmount= $request->input('uAmount');
+   $paceValue= $request->input('pace');
 
-   #code to generate random User
+   $paceValue = 1; // default value
+
+    // Make sure a value was sent
+    if(isset($_POST['pace'])) {
+        // Check that sets is numeric, and above 0
+    }
+
+    $runs = array(
+    'run1' => 7 * $paceValue,
+    'run2' => 3 * $paceValue,
+    'run3' => 2 * $paceValue
+);
+
+// Main routine for Pace
+// Validate required data, do computation, and display results
+// Pace = Time / Dist
+{
+		dunit = form.dunit.options[form.dunit.selectedIndex].value
+		punit = form.punit.options[form.punit.selectedIndex].value
+		var factor = convUnit(dunit, punit)
+		pace = (time / dist) / factor
+
+		form.phr.value = HrsFromTSecs(pace)
+		form.pmin.value = MinsFromTSecs(pace)
+		form.psec.value = SecsFromTSecs(pace)
+	}
+}
+
+   #code to generate adjusted running plan
    $gen = new \RandomUser\Generator();
    $users = $gen->getUsers($uAmount);
    $userArray = array();
@@ -55,9 +83,9 @@ public function store(Request $request)
    $output = implode("", $userArray);
 
 
-  #?
+  #?*/
    #view results
-   return view('random-user.store', ['output' => $output]);
+ return view('5k.store'/*, ['output' => $output]*/);
 
  }
 }
