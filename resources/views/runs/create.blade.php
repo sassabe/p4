@@ -19,7 +19,7 @@
                 name='title'
                 value='{{ old('title', 'Minuteman Slingshot') }}'
             >
-           <div class='error'>{{ $errors->first('distance') }}</div>
+           <div class='error'>{{ $errors->first('title') }}</div>
         </div>
 
         <div class='form-group'>
@@ -72,14 +72,6 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Log Run</button>
-
-        {{--
-        <ul class=''>
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-        --}}
 
         <div class='error'>
             @if(count($errors) > 0)

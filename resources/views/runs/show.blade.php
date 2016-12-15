@@ -11,8 +11,9 @@
 @section('content')
 
     <h1 class='truncate'>{{ $run->title }}</h1>
-    <h2 class='truncate'>{{ $run->distance }}</h2>
-    <h2 class='truncate'>{{ $run->shoe->model }} {{ $book->shoe->make }}</h2>
+    <h2 class='truncate'>Distance: {{ $run->distance }} miles</h2>
+    <h2 class='truncate'>Shoes: {{ $run->shoe->model }} {{ $run->shoe->make }}</h2>
+    <h2 class='truncate'>Notes: {{ $run->notes }}</h2>
 
 
 

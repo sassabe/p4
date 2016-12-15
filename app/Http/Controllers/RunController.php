@@ -52,7 +52,8 @@ class RunController extends Controller
         $this->validate($request, [
             'title' => 'required|min:3',
             'distance' => 'required|min:1|numeric',
-            'duration' => 'required|min:1',
+            'notes' => 'required|min:1',
+            ##'duration' => 'required|min:1',
         ]);
         # If there were errors, Laravel will redirect the
         # user back to the page that submitted this request
@@ -66,7 +67,7 @@ class RunController extends Controller
         $run = new Run();
         $run->title = $request->input('title');
         $run->distance = $request->input('distance');
-        $run->duration = $request->input('duration');
+        ##$run->duration = $request->input('duration');
         $run->shoe_id = $request->shoe_id;
         $run->notes = $request->input('notes');
         $run->user_id = $request->user()->id;
@@ -113,13 +114,14 @@ class RunController extends Controller
         $this->validate($request, [
           'title' => 'required|min:3',
           'distance' => 'required|min:1|numeric',
-          'duration' => 'required|min:1|numeric',
+          'notes' => 'required|min:1',
+          ##'duration' => 'required|min:1|numeric',
         ]);
         # Find and update book
         $run = Run::find($request->id);
         $run->title = $request->title;
         $run->distance = $request->distance;
-        $run->duration = $request->duration;
+        ##$run->duration = $request->duration;
         $run->shoe_id = $request->shoe_id;
         $run->notes = $request->$notes;
         $book->save();
