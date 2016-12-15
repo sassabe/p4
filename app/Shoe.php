@@ -16,7 +16,7 @@ public static function getForDropdown() {
         $shoes = Shoe::orderBy('model', 'ASC')->get();
         $shoes_for_dropdown = [];
         foreach($shoes as $shoe) {
-            $shoes_for_dropdown[$shoe->id] = $shoe->make.' '.$author->model;
+            $shoes_for_dropdown[$shoe->id] = $shoe->make.' '.$shoe->model;
         }
         return $shoes_for_dropdown;
     }
