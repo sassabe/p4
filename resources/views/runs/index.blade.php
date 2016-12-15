@@ -19,21 +19,14 @@
             @foreach($books as $book)
 
                 <section class='run'>
-                    <a href='/runs/{{ $book->id }}'><h2 class='truncate'>{{ $book->title }}</h2></a>
+                    <a href='/runs/{{ $run->id }}'><h2 class='truncate'>{{ $run->title }}</h2></a>
 
-                    <h3 class='truncate'>{{ $book->author->first_name }} {{ $book->author->last_name }}</h3>
+                    <h3 class='truncate'>{{ $run->shoe->model }} {{ $run->shoe->make }}</h3>
 
-                    <a href='/runs/{{ $book->id }}'><img class='cover' src='{{ $book->cover }}' alt='Cover for {{ $book->title }}'></a>
 
-                    <div class='tags'>
-                        @foreach($book->tags as $tag)
-                            <div class='tag'>{{ $tag->name }}</div>
-                        @endforeach
-                    </div>
-
-                    <a class='button' href='/runs/{{ $book->id }}/edit'><i class='fa fa-pencil'></i> Edit</a>
-                    <a class='button' href='/runs/{{ $book->id }}'><i class='fa fa-eye'></i> View</a>
-                    <a class='button' href='/runs/{{ $book->id }}/delete'><i class='fa fa-trash'></i> Delete</a>
+                    <a class='button' href='/runs/{{ $run->id }}/edit'><i class='fa fa-pencil'></i> Edit</a>
+                    <a class='button' href='/runs/{{ $run->id }}'><i class='fa fa-eye'></i> View</a>
+                    <a class='button' href='/runs/{{ $run->id }}/delete'><i class='fa fa-trash'></i> Delete</a>
                 </section>
             @endforeach
         </div>

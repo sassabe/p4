@@ -11,6 +11,16 @@
     <form method='POST' action='/runs'>
 
         {{ csrf_field() }}
+        <div class='form-group'>
+           <label>Title</label>
+            <input
+                type='text'
+                id='title'
+                name='title'
+                value='{{ old('title', $run->title) }}'
+            >
+           <div class='error'>{{ $errors->first('distance') }}</div>
+        </div>
 
         <div class='form-group'>
            <label>Run distance</label>
@@ -20,7 +30,7 @@
                 name='distance'
                 value='{{ old('distance', '6') }}'
             >
-           <div class='error'>{{ $errors->first('title') }}</div>
+           <div class='error'>{{ $errors->first('distance') }}</div>
         </div>
 
 
@@ -32,17 +42,27 @@
                name='runTime'
                value='{{ old('01:30:40') }}'
            >
-           <div class='error'>{{ $errors->first('published') }}</div>
+           <div class='error'>{{ $errors->first('runTime') }}</div>
         </div>
 
-
+        <div class='form-group'>
+          <label>Notes</label>
+          <input
+              type='notes'
+              id='notes'
+              name='notes'
+              value='{{ old('Great run!') }}'
+          >
+          <div class='error'>{{ $errors->first('notes') }}</div>
+        </div>
+        
         <div class='form-group'>
             <label>Shoes</label>
             <select name='shoe_id'>
-                @foreach($shoe_for_dropdown as $shoe_id => $author)
+                @foreach($shoe_for_dropdown as $shoe_id => $shoe)
                     <option
                     value='{{ $shoe_id }}'
-                    >{{ $shoes }}</option>
+                    >{{ $shoe }}</option>
                 @endforeach
             </select>
         </div>

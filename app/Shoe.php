@@ -12,7 +12,7 @@ class Shoe extends Model
       return $this->hasMany('RunTrainer\Run');
 }
 public static function getForDropdown() {
-        # Author
+        # Shoe
         $shoes = Shoe::orderBy('model', 'ASC')->get();
         $shoes_for_dropdown = [];
         foreach($shoes as $shoe) {

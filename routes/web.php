@@ -28,15 +28,15 @@ Route::get('/half-marathon/create', 'HalfController@create')->name('half-maratho
 Route::get('/marathon/create', 'MarathonController@create')->name('marathon.create')->middleware('auth');
 
 ##Runs
+Route::get('/runs', 'RunController@index')->name ('run.index')->middleware('auth');
+Route::get('/runs/create', 'RunController@create')->name ('run.create')->middleware('auth');
+Route::post('/runs', 'RunController@store')->name('run.store');
+Route::get('/runs/{title}', 'RunController@show')->name('run.show');
+Route::get('/runs/{id}/edit', 'RunController@edit')->name('run.edit');
+Route::put('/runs/{id}', 'RunController@update')->name('run.update');
+Route::get('/runs/{id}/delete', 'RunController@delete')->name('run.destroy');
+Route::delete('/runs/{id}', 'RunController@destroy')->name('run.destroy');
 
-Route::get('/runs/create', 'RunController@create')->name ('runs.create')->middleware('auth');
-Route::post('/runs', 'RunController@store')->name('runs.store');
-Route::get('/runs/{title}', 'RunController@show')->name('runs.show');
-Route::get('/runs/{id}/edit', 'RunController@edit')->name('runs.edit');
-Route::put('/runs/{id}', 'RunController@update')->name('runs.update');
-Route::get('/runs/{id}/delete', 'RunController@delete')->name('runs.destroy');
-Route::delete('/runs/{id}', 'RunController@destroy')->name('runs.destroy');
-Route::get('/runs', 'RunController@index')->name ('runs.index')->middleware('auth');
 ##code to make sure DB connection is working, test it at localhost/debug
 Route::get('/debug', function() {
 
