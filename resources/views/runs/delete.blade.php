@@ -4,6 +4,10 @@
     Confirm deletion: {{ $run->title }}
 @endsection
 
+@section('head')
+    <link href='/css/runs.css' rel='stylesheet'>
+@endsection
+
 @section('content')
 
     <h1>Confirm deletion</h1>
@@ -13,10 +17,11 @@
 
         {{ csrf_field() }}
 
-        <h2>Are you sure you want to delete <em>{{ $run->title }}</em>?</h2>
+        <h2>Are you sure you want to delete <em style="color:#9BCC31;">{{ $run->title }}</em>?</h2>
 
-        <input type='submit' value='Yes'>
-        
+        <!--<input type='submit' value='Yes'>-->
+        <button type="submit" class="btn btn-primary">Yes</button>
+
     </form>
 
 @endsection

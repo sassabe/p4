@@ -4,6 +4,10 @@
     Edit {{ $run->title }}
 @stop
 
+@section('head')
+    <link href='/css/runs.css' rel='stylesheet'>
+@endsection
+
 @section('content')
 
     <h1>Edit {{ $run->title }} </h1>
@@ -34,7 +38,7 @@
                type='number'
                id='distance'
                name='distance'
-               value='{{ old('distance', '6') }}'
+               value='{{ old('distance', $run->distance) }}'
            >
             <div class='error'>{{ $errors->first('distance') }}</div>
         </div>
@@ -53,10 +57,10 @@
         <div class='form-group'>
           <label>Notes</label>
           <input
-              type='notes'
+              type='text'
               id='notes'
               name='notes'
-              value='{{ old('Great run!') }}'
+              value='{{ old('notes', $run->notes) }}'
           >
           <div class='error'>{{ $errors->first('notes') }}</div>
         </div>

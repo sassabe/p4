@@ -4,6 +4,10 @@
     Log Run
 @stop
 
+@section('head')
+  <link href="/css/runs.css" type='text/css' rel='stylesheet'>
+@endsection
+
 @section('content')
 
     <h1>Log a new run</h1>
@@ -51,7 +55,7 @@
               type='notes'
               id='notes'
               name='notes'
-              value='{{ old('Great run!') }}'
+              value='{{ old('notes', 'Great run!') }}'
           >
           <div class='error'>{{ $errors->first('notes') }}</div>
         </div>

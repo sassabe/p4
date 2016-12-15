@@ -8,12 +8,16 @@
     View all Runs
 @endsection
 
+@section('head')
+  <link href="/css/runs.css" type='text/css' rel='stylesheet'>
+@endsection
+
 @section('content')
 
     <h1>My Running Log</h1>
 
     @if(sizeof($runs) == 0)
-        <h4>You don't have any runs to show.</h4> 
+        <h4>You don't have any runs to show.</h4>
         <div class="links">
           <a href='/runs/create'>Log a run now to get started</a>
         </div>
@@ -22,14 +26,14 @@
             @foreach($runs as $run)
 
                 <section class='run'>
-                    <a href='/runs/{{ $run->id }}'><h2 class='truncate'>{{ $run->title }}</h2></a>
+                    <a href='/runs/{{ $run->id }}'><h2>{{ $run->title }}</h2></a>
 
-                    <h3 class='truncate'>{{ $run->shoe->model }} {{ $run->shoe->make }}</h3>
+                    <h3>{{ $run->shoe->model }} {{ $run->shoe->make }}</h3>
 
+                      <a class='button' href='/runs/{{ $run->id }}/edit'> Edit</a>
+                      <a class='button' href='/runs/{{ $run->id }}'> View</a>
+                      <a class='button' href='/runs/{{ $run->id }}/delete'> Delete</a>
 
-                    <a class='button' href='/runs/{{ $run->id }}/edit'><i class='fa fa-pencil'></i> Edit</a>
-                    <a class='button' href='/runs/{{ $run->id }}'><i class='fa fa-eye'></i> View</a>
-                    <a class='button' href='/runs/{{ $run->id }}/delete'><i class='fa fa-trash'></i> Delete</a>
                 </section>
             @endforeach
         </div>

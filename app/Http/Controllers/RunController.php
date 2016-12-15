@@ -123,8 +123,8 @@ class RunController extends Controller
         $run->distance = $request->distance;
         ##$run->duration = $request->duration;
         $run->shoe_id = $request->shoe_id;
-        $run->notes = $request->$notes;
-        $book->save();
+        $run->notes = $request->notes;
+        $run->save();
 
         # Finish
         Session::flash('flash_message', 'Your changes to '.$run->title.' were saved.');
