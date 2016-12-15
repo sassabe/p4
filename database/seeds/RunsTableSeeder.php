@@ -11,6 +11,7 @@ class RunsTableSeeder extends Seeder
      */
     public function run()
     {
+      $shoe_id = Shoe::where('model','=','Minimus')->pluck('id')->first();
       DB::table('runs')->insert([
       'created_at' => Carbon\Carbon::now()->toDateTimeString(),
       'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -20,8 +21,8 @@ class RunsTableSeeder extends Seeder
       'duration' => '01:30:33',
       'shoe_id' => $shoe_id,
       ]);
-      $shoe_id = Shoe::where('model','=','Minimus')->pluck('id')->first();
 
+      $shoe_id = Shoe::where('model','=','Minimus')->pluck('id')->first();
       DB::table('runs')->insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -31,8 +32,8 @@ class RunsTableSeeder extends Seeder
           'duration' => '01:30:33',
           'shoe_id' => $shoe_id,
       ]);
-      $shoe_id = Shoe::where('model','=','Minimus')->pluck('id')->first();
 
+      $shoe_id = Shoe::where('model','=','Free RN Flyknit')->pluck('id')->first();
       DB::table('runs')->insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -42,6 +43,6 @@ class RunsTableSeeder extends Seeder
           'duration' => '01:30:33',
           'shoe_id' => $shoe_id,
       ]);
-      $shoe_id = Shoe::where('model','=','Free RN Flyknit')->pluck('id')->first();
+
     }
 }

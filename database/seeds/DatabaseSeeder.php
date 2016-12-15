@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ShoesTableSeeder::class);
         $this->call(RunsTableSeeder::class);
 
+
     }
 }

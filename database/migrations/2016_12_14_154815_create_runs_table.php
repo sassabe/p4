@@ -22,8 +22,6 @@ class CreateRunsTable extends Migration
             # This generates two columns: `created_at` and `updated_at` to
             # keep track of changes to a row
             $table->timestamps();
-
-            # The rest of the fields:
             $table->string('title');
             $table->string('notes')->nullable();
             $table->integer('distance');
