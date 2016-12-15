@@ -17,7 +17,7 @@
                 type='text'
                 id='title'
                 name='title'
-                value='{{ old('title', $run->title) }}'
+                value='{{ old('title', 'Minuteman Slingshot') }}'
             >
            <div class='error'>{{ $errors->first('distance') }}</div>
         </div>
@@ -34,16 +34,16 @@
         </div>
 
 
-        <div class='form-group'>
+      <!--  <div class='form-group'>
            <label>Run time</label>
            <input
-               type='time'
+               type='numer'
                id='runTime'
                name='runTime'
                value='{{ old('01:30:40') }}'
            >
            <div class='error'>{{ $errors->first('runTime') }}</div>
-        </div>
+        </div>-->
 
         <div class='form-group'>
           <label>Notes</label>
@@ -55,11 +55,11 @@
           >
           <div class='error'>{{ $errors->first('notes') }}</div>
         </div>
-        
+
         <div class='form-group'>
             <label>Shoes</label>
             <select name='shoe_id'>
-                @foreach($shoe_for_dropdown as $shoe_id => $shoe)
+                @foreach($shoes_for_dropdown as $shoe_id => $shoe)
                     <option
                     value='{{ $shoe_id }}'
                     >{{ $shoe }}</option>

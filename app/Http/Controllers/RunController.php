@@ -28,7 +28,7 @@ class RunController extends Controller
     else {
         $runs = [];
     }
-    return view('run.index') ->with([
+    return view('runs.index') ->with([
         'runs' => $runs
     ]);
   }
@@ -39,7 +39,7 @@ class RunController extends Controller
     {
         $shoes_for_dropdown = Shoe::getForDropdown();
 
-        return view('run.create')->with([
+        return view('runs.create')->with([
             'shoes_for_dropdown' => $shoes_for_dropdown
         ]);
     }
@@ -52,7 +52,7 @@ class RunController extends Controller
         $this->validate($request, [
             'title' => 'required|min:3',
             'distance' => 'required|min:1|numeric',
-            'duration' => 'required|min:1|numeric',
+            'duration' => 'required|min:1',
         ]);
         # If there were errors, Laravel will redirect the
         # user back to the page that submitted this request
@@ -85,7 +85,7 @@ class RunController extends Controller
             Session::flash('message','Run not found');
             return redirect('/runs');
         }
-        return view('run.show')->with([
+        return view('runs.show')->with([
             'run' => $run,
         ]);
     }
@@ -97,7 +97,7 @@ class RunController extends Controller
         $run = Run::find($id);
         $shoes_for_dropdown = Shoe::getForDropdown();
 
-        return view('run.edit')->with(
+        return view('runs.edit')->with(
             [
                 'run' => $run,
                 'shoes_for_dropdown' => $shoes_for_dropdown,
@@ -134,7 +134,7 @@ class RunController extends Controller
 	*/
     public function delete($id) {
         $run = Run::find($id);
-        return view('run.delete')->with('run', $run);
+        return view('runs.delete')->with('run', $run);
     }
     /**
     * POST

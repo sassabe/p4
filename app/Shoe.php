@@ -20,3 +20,4 @@ public static function getForDropdown() {
         }
         return $shoes_for_dropdown;
     }
+}

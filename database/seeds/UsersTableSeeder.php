@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use RunTrainer\Run;
+use RunTrainer\Shoe;
 use RunTrainer\User;
+
+
 
 class UsersTableSeeder extends Seeder
 {

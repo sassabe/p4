@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('head')
-    <link href='/css/styles.css' rel='stylesheet'>
+    <link href='/css/runs.css' rel='stylesheet'>
 @endsection
 
 @section('title')
@@ -12,11 +12,14 @@
 
     <h1>My Running Log</h1>
 
-    @if(sizeof($books) == 0)
-        You don't have any runs to show. You can <a href='/runs/create'>log a run now to get started</a>.
+    @if(sizeof($runs) == 0)
+        <h4>You don't have any runs to show.</h4> 
+        <div class="links">
+          <a href='/runs/create'>Log a run now to get started</a>
+        </div>
     @else
         <div id='run' class='cf'>
-            @foreach($books as $book)
+            @foreach($runs as $run)
 
                 <section class='run'>
                     <a href='/runs/{{ $run->id }}'><h2 class='truncate'>{{ $run->title }}</h2></a>

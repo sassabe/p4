@@ -11,7 +11,8 @@
 
 @section('content')
 <h1>Train for a 10k</h1>
-<h4>This training program follows our standard format of approximately 4 runs per week over a period of 2 months. <br /> The plan focuses on speed and distance, to build your endurance and stamina for racing middle distance. <br />The long run in the first week of training is a relatively easy 4-miler. Each weekend, the long run gets longer, peaking at 10 miles 2 weeks before the 10k. A tapering period in the last week allows you to gather energy for the race.</h4>
+<h4>This training program lasts one month <br /> The plan focuses on speed and distance, to build your endurance and stamina for racing middle distance. <br />The long run in the first week of training is a relatively easy 6-miler. Each weekend, the long run gets longer, peaking at 7 miles. The last two days are rest days before the race.</h4>
+
 <h4>Training Calendar</h4>
 
 <ul class="weekdays">
@@ -25,9 +26,9 @@
 </ul>
 
 <ul class="days">
-  <li><a href="/runs/create">3 mile run</a></li>
-  <li><a href="/runs/create">3.5 mile run</a></li>
-  <li><a href="/runs/create">8x400 @ 5K pace</a></li>
+  <li>3 mile run</li>
+  <li>3.5 mile run</li>
+  <li>8x400 @ 5K pace</li>
   <li>4 mile run</li>
   <li>Rest</li>
   <li>60 min cross-training</li>
@@ -59,7 +60,7 @@
 </ul>
     <h4 class="highlight">Log your miles to start training!</h4>
     <div class="links">
-      <a href="/runs/create">Log new run</a>
+      <a href="/runs/create">Log your run</a>
     </div>
 
 

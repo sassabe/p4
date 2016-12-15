@@ -26,7 +26,7 @@ class CreateRunsTable extends Migration
             $table->string('notes')->nullable();
             $table->integer('distance');
             $table->string('shoes')->nullable();
-            $table->time('duration');
+            ##$table->time('duration');
 
             });
     }
