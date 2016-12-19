@@ -27,3 +27,6 @@ Specifically:
 
 ## Outside code
 I used Susan's notes in Github for the setup.
+I used Google Fonts for my web fonts:
+https://fonts.googleapis.com/css?family=Muli
+https://fonts.googleapis.com/css?family=Bungee+Shade
